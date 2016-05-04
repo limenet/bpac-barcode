@@ -27,9 +27,9 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(12, 149);
+            this.btnPrint.Location = new System.Drawing.Point(16, 149);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(255, 25);
+            this.btnPrint.Size = new System.Drawing.Size(251, 25);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "Print label";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -38,7 +38,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 56);
+            this.label2.Location = new System.Drawing.Point(13, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 6;
@@ -47,7 +47,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 9);
+            this.label3.Location = new System.Drawing.Point(13, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 7;
@@ -82,7 +82,11 @@
             this.cntCopies.Name = "cntCopies";
             this.cntCopies.Size = new System.Drawing.Size(174, 20);
             this.cntCopies.TabIndex = 9;
-            this.cntCopies.Value = 1;
+            this.cntCopies.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // BarcodeForm
             // 
