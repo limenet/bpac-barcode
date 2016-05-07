@@ -51,8 +51,9 @@ namespace BarcodePrint
             bpac.DocumentClass doc = new DocumentClass();
             if (doc.Open(templatePath) != false)
             {
-                doc.GetObject("objName").Text = title;
-                doc.GetObject("objBarcode").Text = barcode;
+                doc.GetObject("title").Text = title;
+                doc.GetObject("barcode").Text = barcode;
+                doc.GetObject("timestamp").Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm"); ;
 
                 // doc.SetMediaById(doc.Printer.GetMediaId(), true);
                 doc.StartPrint("", PrintOptionConstants.bpoDefault);
