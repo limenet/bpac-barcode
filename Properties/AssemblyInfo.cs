@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("b-PAC 3.0 Component Sample")]
-[assembly: AssemblyDescription("b-PAC 3.0 Component Sample")]
+[assembly: AssemblyTitle("bpac-barcode")]
+[assembly: AssemblyDescription("Based on the Brother b-PAC sampe code, this is a simple program which prints barcodes -- using either a GUI or the CLI.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Brother Industries, Ltd.")]
-[assembly: AssemblyProduct("b-PAC 3.0 Component Sample")]
-[assembly: AssemblyCopyright("Copyright Brother Industries, Ltd. 2009")]
+[assembly: AssemblyCompany("limenet.ch")]
+[assembly: AssemblyProduct("bpac-barcode by @limenet")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9d5f0705-b9b3-4b42-a7ef-2d8cea6157cd")]
+[assembly: Guid("5A91F93B-6FFB-4D55-A28D-E3383F404AAA")]
 
 //
 // Version information for an assembly consists of the following four values:
@@ -34,5 +34,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.0.1.0")]
+[assembly: AssemblyFileVersion("0.0.1.2")]
