@@ -83,11 +83,8 @@
             this.cntCopies.Name = "cntCopies";
             this.cntCopies.Size = new System.Drawing.Size(174, 20);
             this.cntCopies.TabIndex = 9;
-            this.cntCopies.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.cntCopies.Minimum = 1;
+            this.cntCopies.Value = 1;
             // 
             // BarcodeForm
             // 
