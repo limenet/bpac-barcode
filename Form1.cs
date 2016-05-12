@@ -18,7 +18,6 @@ namespace BarcodePrint
 {
     public partial class BarcodeForm : Form
     {
-        private const string TEMPLATE = @"BcdItem.lbx";
 
         public BarcodeForm()
         {
@@ -47,7 +46,7 @@ namespace BarcodePrint
 
          private void doPrint(string title, string barcode, int count = 1)
         {
-            string templatePath = TEMPLATE;
+            string templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+"\\BcdItem.lbx";
             bpac.DocumentClass doc = new DocumentClass();
             if (doc.Open(templatePath) != false)
             {
