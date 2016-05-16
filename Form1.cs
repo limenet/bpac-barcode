@@ -46,8 +46,8 @@ namespace BarcodePrint
 
          private void doPrint(string title, string barcode, int count = 1)
         {
-            string templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+"\\BcdItem.lbx";
             bpac.DocumentClass doc = new DocumentClass();
+            string templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+"\\" + doc.Printer.GetMediaId().ToString() + ".lbx";
             if (doc.Open(templatePath) != false)
             {
                 doc.GetObject("title").Text = title;
@@ -62,7 +62,7 @@ namespace BarcodePrint
             }
             else
             {
-                MessageBox.Show("Open() Error: " + doc.ErrorCode);
+                MessageBox.Show("Open() Error: " + doc.ErrorCode + "\nMedia ID" + doc.Printer.GetMediaId().ToString());
             }
         }
         
