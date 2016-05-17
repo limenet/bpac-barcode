@@ -54,9 +54,9 @@ namespace BarcodePrint
                 doc.GetObject("barcode").Text = barcode;
                 doc.GetObject("timestamp").Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm"); ;
 
-                // doc.SetMediaById(doc.Printer.GetMediaId(), true);
-                doc.StartPrint("", PrintOptionConstants.bpoAutoCut | PrintOptionConstants.bpoQuality);
-                doc.PrintOut(count, PrintOptionConstants.bpoAutoCut | PrintOptionConstants.bpoQuality);
+                bpac.PrintOptionConstants printOptions = PrintOptionConstants.bpoAutoCut | PrintOptionConstants.bpoQuality;
+                doc.StartPrint("", printOptions);
+                doc.PrintOut(count, printOptions);
                 doc.EndPrint();
                 doc.Close();
             }
