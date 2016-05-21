@@ -20,15 +20,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.cntCopies = new System.Windows.Forms.NumericUpDown();
+            this.timestamp = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.cntCopies)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(16, 149);
+            this.btnPrint.Location = new System.Drawing.Point(16, 201);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(251, 25);
             this.btnPrint.TabIndex = 2;
@@ -63,6 +65,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Count";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Timestamp";
+            // 
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(93, 5);
@@ -80,20 +91,40 @@
             // cntCopies
             // 
             this.cntCopies.Location = new System.Drawing.Point(93, 101);
+            this.cntCopies.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.cntCopies.Name = "cntCopies";
             this.cntCopies.Size = new System.Drawing.Size(174, 20);
             this.cntCopies.TabIndex = 9;
-            this.cntCopies.Minimum = 1;
-            this.cntCopies.Value = 1;
+            this.cntCopies.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // timestamp
+            // 
+            this.timestamp.CustomFormat = "dd.MM.yyyy hh:mm";
+            this.timestamp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timestamp.Location = new System.Drawing.Point(93, 149);
+            this.timestamp.MaxDate = System.DateTime.Now;
+            this.timestamp.Name = "timestamp";
+            this.timestamp.Size = new System.Drawing.Size(174, 20);
+            this.timestamp.TabIndex = 9;
             // 
             // BarcodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 186);
+            this.ClientSize = new System.Drawing.Size(292, 238);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.cntCopies);
+            this.Controls.Add(this.timestamp);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -112,6 +143,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker timestamp;
         private System.Windows.Forms.NumericUpDown cntCopies;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtBarcode;
