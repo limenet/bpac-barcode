@@ -22,3 +22,12 @@ Note:
 
 ## Templates
 Every label roll has a different media ID and to print there has to be a file named `[media ID].lbx` in the same folder as `BarcodePrint.exe`. To figure out what your current media ID is, open the GUI version, and hit print. If your media ID is supported, a barcode will print, otherwise you'll see an error message telling you which media ID is currently in the printer.
+
+### List of media IDs (incomplete)
+
+| Media ID | DK no. | Measurements |
+|----------|--------|-------------|
+| 259 | DK-22205 | 62mm // 2-3/7" |
+| 264 | DK-22225 | 38mm // 1-1/2" |
+| 269 | DK-11204 | 17mm x 54 mm // 2/3" x 2-1/8" |
+| 270 | DK-11203 | 17mm x 87mm // 2/3" x 3-7/16" |
