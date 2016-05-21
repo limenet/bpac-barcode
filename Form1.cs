@@ -40,7 +40,7 @@ namespace BarcodePrint
             }
             else if (args.GetLength(0) == 5)
             {
-                doPrint(args[1], args[2], args[3], Int32.Parse(args[3]));
+                doPrint(args[1], args[2], args[3], Int32.Parse(args[4]));
                 Close();
             }
         }
