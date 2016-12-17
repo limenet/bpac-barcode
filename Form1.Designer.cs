@@ -107,7 +107,7 @@
             // 
             // timestamp
             // 
-            this.timestamp.CustomFormat = "dd.MM.yyyy hh:mm";
+            this.timestamp.CustomFormat = "dd.MM.yyyy HH:mm";
             this.timestamp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.timestamp.Location = new System.Drawing.Point(93, 149);
             this.timestamp.MaxDate = System.DateTime.Now;
