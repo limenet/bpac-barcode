@@ -8,8 +8,8 @@
     <ProjectGuid>{774FC6F2-E85F-4A44-AF1C-CD8765F35BC1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BarcodePrint</RootNamespace>
-    <AssemblyName>BarcodePrint</AssemblyName>
+    <RootNamespace>BpacBarcode</RootNamespace>
+    <AssemblyName>bpac-barcode</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
