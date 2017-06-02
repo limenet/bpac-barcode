@@ -92,10 +92,5 @@ namespace BarcodePrint
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
