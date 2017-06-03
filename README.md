@@ -27,6 +27,7 @@ Every label roll has a different media ID and to print there has to be a file na
 
 | Media ID | DK no. | Measurements |
 |----------|--------|-------------|
+| 258 | DK-22210 | 29mm // 1-5/32" |
 | 259 | DK-22205 | 62mm // 2-3/7" |
 | 264 | DK-22225 | 38mm // 1-1/2" |
 | 269 | DK-11204 | 17mm x 54 mm // 2/3" x 2-1/8" |
