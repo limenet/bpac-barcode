@@ -1,4 +1,4 @@
-﻿namespace BarcodePrint
+﻿namespace BpacBarcode
 {
     partial class BarcodeForm
     {
@@ -41,7 +41,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 8);
+            this.label2.Location = new System.Drawing.Point(13, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 6;
@@ -50,7 +50,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 56);
+            this.label3.Location = new System.Drawing.Point(13, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 7;
@@ -59,7 +59,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 103);
+            this.label4.Location = new System.Drawing.Point(13, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 8;
@@ -68,7 +68,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 150);
+            this.label5.Location = new System.Drawing.Point(13, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 8;
@@ -76,21 +76,21 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(93, 5);
+            this.txtTitle.Location = new System.Drawing.Point(93, 16);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(174, 20);
             this.txtTitle.TabIndex = 8;
             // 
             // txtBarcode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(93, 53);
+            this.txtBarcode.Location = new System.Drawing.Point(93, 64);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(174, 20);
             this.txtBarcode.TabIndex = 9;
             // 
             // cntCopies
             // 
-            this.cntCopies.Location = new System.Drawing.Point(93, 101);
+            this.cntCopies.Location = new System.Drawing.Point(93, 112);
             this.cntCopies.Minimum = new decimal(new int[] {
             1,
             0,
@@ -107,10 +107,10 @@
             // 
             // timestamp
             // 
+            this.timestamp.Checked = false;
             this.timestamp.CustomFormat = "dd.MM.yyyy HH:mm";
             this.timestamp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timestamp.Location = new System.Drawing.Point(93, 149);
-            this.timestamp.MaxDate = System.DateTime.Now;
+            this.timestamp.Location = new System.Drawing.Point(93, 160);
             this.timestamp.Name = "timestamp";
             this.timestamp.Size = new System.Drawing.Size(174, 20);
             this.timestamp.TabIndex = 9;
@@ -130,8 +130,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPrint);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "BarcodeForm";
-            this.Text = "Barcode Printer";
+            this.Text = "bpac-barcode";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cntCopies)).EndInit();
             this.ResumeLayout(false);
