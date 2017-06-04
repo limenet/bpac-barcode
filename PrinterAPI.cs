@@ -19,7 +19,7 @@ namespace BpacBarcode
             this.count = count;
         }
 
-        public bool print()
+        public int print()
         {
             bpac.DocumentClass doc = new DocumentClass();
             string templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\" + doc.Printer.GetMediaId().ToString() + ".lbx";
@@ -34,11 +34,11 @@ namespace BpacBarcode
                 doc.PrintOut(count, printOptions);
                 doc.EndPrint();
                 doc.Close();
-                return true;
+                return doc.ErrorCode;
             }
 
             MessageBox.Show("Open() Error: " + doc.ErrorCode + "\nMedia ID" + doc.Printer.GetMediaId().ToString());
-            return false;
+            return doc.ErrorCode;
         }
     }
 }

@@ -17,7 +17,8 @@ namespace BpacBarcode
 
             if (args.GetLength(0) >= 3)
             {
-                int exitCode = (new PrinterAPI(args[1], args[2], args.Length > 3 ? args[3] : null, args.Length > 4 ? Int32.Parse(args[4]) : 1).print()) ? 0 : 1;
+                int exitCode = new PrinterAPI(args[1], args[2], args.Length > 3 ? args[3] : null, args.Length > 4 ? Int32.Parse(args[4]) : 1).print();
+                Close();
                 Program.ExitApplication(exitCode);
             }
         }
