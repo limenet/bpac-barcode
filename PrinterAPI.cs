@@ -8,31 +8,18 @@ namespace BpacBarcode
     {
         private string title;
         private string barcode;
-        private string timestamp = System.DateTime.Now.ToString("dd.MM.yyyy HH:mm");
-        private int count = 1;
+        private string timestamp;
+        private int count;
 
-        public PrinterAPI(string title, string barcode)
+        public PrinterAPI(string title, string barcode, string timestamp = null, int count = 1)
         {
             this.title = title;
             this.barcode = barcode;
-        }
-
-        public PrinterAPI(string title, string barcode, string timestamp)
-        {
-            this.title = title;
-            this.barcode = barcode;
-            this.timestamp = timestamp;
-        }
-
-        public PrinterAPI(string title, string barcode, string timestamp, int count)
-        {
-            this.title = title;
-            this.barcode = barcode;
-            this.timestamp = timestamp;
+            this.timestamp = timestamp != null ? timestamp : DateTime.Now.ToString("dd.MM.yyyy HH:mm");
             this.count = count;
         }
 
-        public void print()
+        public bool print()
         {
             bpac.DocumentClass doc = new DocumentClass();
             string templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\" + doc.Printer.GetMediaId().ToString() + ".lbx";
@@ -47,11 +34,11 @@ namespace BpacBarcode
                 doc.PrintOut(count, printOptions);
                 doc.EndPrint();
                 doc.Close();
+                return true;
             }
-            else
-            {
-                MessageBox.Show("Open() Error: " + doc.ErrorCode + "\nMedia ID" + doc.Printer.GetMediaId().ToString());
-            }
+
+            MessageBox.Show("Open() Error: " + doc.ErrorCode + "\nMedia ID" + doc.Printer.GetMediaId().ToString());
+            return false;
         }
     }
 }

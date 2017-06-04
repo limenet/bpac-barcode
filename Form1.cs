@@ -15,20 +15,10 @@ namespace BpacBarcode
         {
             string[] args = Environment.GetCommandLineArgs();
 
-            if (args.GetLength(0) == 3)
+            if (args.GetLength(0) >= 3)
             {
-                (new PrinterAPI(args[1], args[2])).print();
-                Close();
-            }
-            else if (args.GetLength(0) == 4)
-            {
-                (new PrinterAPI(args[1], args[2], args[3])).print();
-                Close();
-            }
-            else if (args.GetLength(0) == 5)
-            {
-                (new PrinterAPI(args[1], args[2], args[3], Int32.Parse(args[4]))).print();
-                Close();
+                int exitCode = (new PrinterAPI(args[1], args[2], args.Length > 3 ? args[3] : null, args.Length > 4 ? Int32.Parse(args[4]) : 1).print()) ? 0 : 1;
+                Program.ExitApplication(exitCode);
             }
         }
 
@@ -41,8 +31,7 @@ namespace BpacBarcode
         {
             if (keyData == Keys.Escape)
             {
-                Close();
-                return true;
+                Program.ExitApplication(0);
             }
             else if (keyData == Keys.Enter)
             {
