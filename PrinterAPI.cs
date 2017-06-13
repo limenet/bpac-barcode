@@ -11,11 +11,13 @@ namespace BpacBarcode
         private string timestamp;
         private int count;
 
+        private string timestampFormat = "dd.MM.yyyy HH:mm";
+
         public PrinterAPI(string title, string barcode, string timestamp = null, int count = 1)
         {
             this.title = title;
             this.barcode = barcode;
-            this.timestamp = timestamp != null ? timestamp : DateTime.Now.ToString("dd.MM.yyyy HH:mm");
+            this.timestamp = timestamp != null ? DateTime.Parse(timestamp).ToString(timestampFormat) : DateTime.Now.ToString(timestampFormat);
             this.count = count;
         }
 
