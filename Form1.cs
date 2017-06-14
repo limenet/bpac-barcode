@@ -25,7 +25,7 @@ namespace BpacBarcode
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            (new PrinterAPI(txtTitle.Text, txtBarcode.Text, timestamp.Value.ToString(), (int)cntCopies.Value)).print();
+            (new PrinterAPI(txtTitle.Text, txtBarcode.Text, timestamp.Value.ToString("o"), (int)cntCopies.Value)).print();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

@@ -17,7 +17,16 @@ namespace BpacBarcode
         {
             this.title = title;
             this.barcode = barcode;
-            this.timestamp = timestamp != null ? DateTime.Parse(timestamp).ToString(timestampFormat) : DateTime.Now.ToString(timestampFormat);
+            this.timestamp = DateTime.Now.ToString(timestampFormat);
+            if (timestamp != null)
+            {
+                try
+                {
+                    this.timestamp = DateTime.Parse(timestamp).ToString(timestampFormat);
+                }
+                finally { }
+            }
+
             this.count = count;
         }
 
