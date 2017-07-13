@@ -14,11 +14,11 @@ namespace BpacBarcode
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string[] args = Environment.GetCommandLineArgs();
+            var args = Environment.GetCommandLineArgs();
 
             if (args.GetLength(0) >= 3)
             {
-                int exitCode = new PrinterApi(args[1], args[2], args.Length > 3 ? args[3] : null, args.Length > 4 ? Int32.Parse(args[4]) : 1).Print();
+                var exitCode = new PrinterApi(args[1], args[2], args.Length > 3 ? args[3] : null, args.Length > 4 ? Int32.Parse(args[4]) : 1).Print();
                 Close();
                 Program.ExitApplication(exitCode);
             }
@@ -31,13 +31,14 @@ namespace BpacBarcode
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == Keys.Escape)
+            switch (keyData)
             {
-                Program.ExitApplication();
-            }
-            else if (keyData == Keys.Enter)
-            {
-                (new PrinterApi(txtTitle.Text, txtBarcode.Text, timestamp.Value.ToString(CultureInfo.InvariantCulture), (int)cntCopies.Value)).Print();
+                case Keys.Escape:
+                    Program.ExitApplication();
+                    break;
+                case Keys.Enter:
+                    (new PrinterApi(txtTitle.Text, txtBarcode.Text, timestamp.Value.ToString(CultureInfo.InvariantCulture), (int)cntCopies.Value)).Print();
+                    break;
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }

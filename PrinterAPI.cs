@@ -11,18 +11,18 @@ namespace BpacBarcode
         private readonly string _timestamp;
         private readonly int _count;
 
-        private string timestampFormat = "dd.MM.yyyy HH:mm";
+        private const string TimestampFormat = "dd.MM.yyyy HH:mm";
 
         public PrinterApi(string title, string barcode, string timestamp = null, int count = 1)
         {
             _title = title;
             _barcode = barcode;
-            _timestamp = DateTime.Now.ToString(timestampFormat);
+            _timestamp = DateTime.Now.ToString(TimestampFormat);
             if (timestamp != null)
             {
                 try
                 {
-                    _timestamp = DateTime.Parse(timestamp).ToString(timestampFormat);
+                    _timestamp = DateTime.Parse(timestamp).ToString(TimestampFormat);
                 }
                 catch (Exception)
                 {
@@ -35,8 +35,8 @@ namespace BpacBarcode
 
         public int Print()
         {
-            DocumentClass doc = new DocumentClass();
-            string templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\" + doc.Printer.GetMediaId().ToString() + ".lbx";
+            var doc = new DocumentClass();
+            var templatePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\" + doc.Printer.GetMediaId().ToString() + ".lbx";
             if (doc.Open(templatePath))
             {
                 doc.GetObject("title").Text = _title;
