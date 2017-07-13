@@ -5,7 +5,7 @@ namespace BpacBarcode
 {
     static class Program
     {
-        static int exitCode = 0;
+        static int _exitCode;
 
         [STAThread]
         static int Main()
@@ -13,14 +13,13 @@ namespace BpacBarcode
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new BarcodeForm());
-            string[] args = Environment.GetCommandLineArgs();
 
-            return exitCode;
+            return _exitCode;
         }
 
         public static void ExitApplication(int exitCode = 0)
         {
-            Program.exitCode = exitCode;
+            _exitCode = exitCode;
             Application.Exit();
         }
 
